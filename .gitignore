@@ -1,6 +1,8 @@
 .hugo_build.lock
 .hvm
-/.vscode
-/node_modules
-/public
-/resources
+.DS_Store
+.vscode/
+/NOTES.md
+node_modules/
+public/
+resources/

@@ -1,0 +1,5 @@
+baseURL = 'https://example.org/'
+languageCode = 'en-US'
+title = 'Hugo v0.123.6 Anchorizing Term URLs'
+
+disableKinds = ['rss','sitemap']
