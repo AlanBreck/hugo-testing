@@ -1,3 +1,114 @@
 baseURL = 'https://example.org/'
 languageCode = 'en-US'
 title = '@@TITLE@@'
+
+[taxonomies]
+  'ads/learn/category' = 'ads/learn/category'
+
+# Params for microsites
+[[cascade]]
+  type = "microsite"
+  supTitle = "Category"
+  heroClass = "bg-white pt-0"
+  theme = "light"
+  [cascade._target]
+    path = "/{ai,ads/learn,learn,web3}/category**"
+
+[[cascade]]
+  sectionTaxonomy = "ai/category"
+  bodyClass = "ai-page"
+  [cascade._target]
+    path = "/ai/category**"
+
+[[cascade]]
+  sectionTaxonomy = "ads/learn/category"
+  bodyClass = "ads/learn-page"
+  theme = "extra-light"
+  [cascade._target]
+    path = "/ads/learn/category**"
+
+[[cascade]]
+  sectionTaxonomy = "learn/category"
+  bodyClass = "learn-page taxonomy-page"
+  [cascade._target]
+    path = "/learn/category**"
+
+[[cascade]]
+  sectionTaxonomy = "web3/category"
+  bodyClass = "web3-page taxonomy-page"
+  [cascade._target]
+    path = "/web3/category**"
+
+[languages]
+  [languages.en]
+    languageName = "English"
+    weight = 1
+  [languages.en-in]
+    languageName = "English (India)"
+    weight = 2
+  [languages.ja]
+    languageName = "日本語"
+    weight = 3
+  [languages.zh]
+    languageName = "中文 (中国)"
+    weight = 4
+  [languages.ko]
+    languageName = "한국어"
+    weight = 5
+  [languages.de]
+      languageCode = "de-DE"
+    languageName = "Deutsch"
+    weight = 6
+  [languages.fr]
+      languageCode = "fr-FR"
+    languageName = "Français"
+    weight = 7
+  [languages.es]
+    languageName = "Español"
+    weight = 8
+  [languages.da]
+    languageName = "Dansk"
+    weight = 9
+  [languages.it]
+    languageName = "Italiano"
+    weight = 10
+  [languages.pt-br]
+    languageName = "Português"
+    weight = 11
+  [languages.sv]
+    languageName = "Svenska"
+    weight = 12
+  [languages.fil]
+    languageName = "Filipino"
+    weight = 13
+          twoLetterCode = "tl"
+  [languages.hi]
+    languageName = "हिन्दी"
+    weight = 14
+  [languages.id]
+    languageName = "bahasa Indonesia"
+    weight = 15
+  [languages.nl]
+    languageName = "Nederlands"
+    weight = 16
+  [languages.pl]
+    languageName = "Polski"
+    weight = 17
+  [languages.ru]
+    languageName = "Русский"
+    weight = 18
+  [languages.vi]
+    languageName = "Tiếng Việt"
+    weight = 19
+  [languages.ca]
+    languageName = "Català"
+    weight = 20
+  [languages.ro]
+    languageName = "Română"
+    weight = 21
+  [languages.tr]
+    languageName = "Türkçe"
+    weight = 22
+  [languages.uk]
+    languageName = "Українська"
+    weight = 23

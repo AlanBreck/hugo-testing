@@ -5,7 +5,14 @@
   <meta name="viewport" content="width=device-width, minimum-scale=1.0, initial-scale=1.0">
   <title>{{ if .IsHome }}{{ site.Title }}{{ else }}{{ printf "%s | %s" .Title site.Title }}{{ end }}</title>
 </head>
-<body>
+{{- $theme := "dark" -}}
+{{ if .Params.theme }}
+    {{ $theme = .Params.theme }}
+{{ else if (.Scratch.Get "theme") }}
+    {{ $theme = (.Scratch.Get "theme") }}
+{{ end }}
+{{- $bodyClass := .Params.bodyClass -}}
+<body class="{{ $bodyClass }} theme--{{ $theme }}">
   <header>
     <h1>{{ site.Title }}</h1>
     <hr>
