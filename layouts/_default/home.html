@@ -11,15 +11,21 @@
   {{ .Content }}
 
   <h2>Non-empty slice</h2>
-  {{- $pages := where site.RegularPages "Lang" "not in" (slice "fr") -}}
+  {{- $pages := where site.RegularPages "Kind" "not in" (slice "section") -}}
   {{ printf "%v" $pages }}
   {{ range $pages }}
     <h2><a href="{{ .RelPermalink }}">{{ .LinkTitle }}</a></h2>
   {{ end }}
   <h2>Empty slice</h2>
-  {{- $pages := where site.RegularPages "Lang" "not in" (slice) -}}
+  {{- $pages := where site.RegularPages "Kind" "not in" (slice) -}}
   {{ printf "%v" $pages }}
   {{ range $pages }}
     <h2><a href="{{ .RelPermalink }}">{{ .LinkTitle }}</a></h2>
   {{ end }}
+
+  {{ $forbiddenFruits := slice "pear" "apple" }}
+  {{ printf "%#v" (not (in $forbiddenFruits "pineapple")) }}
+  {{ printf "%#v" (not (in $forbiddenFruits "apple")) }}
+  {{ printf "%#v" (not (in slice "pineapple")) }}
+
 {{ end }}
